@@ -1,0 +1,22 @@
+﻿@{
+    var id = TempData["IndexLink"] != null
+        ? TempData["IndexLink"] as string
+        : string.Empty;
+}
+
+<div class="text-center">
+    <h1>URL Shortnr </h1>
+    
+    <form asp-action="Create" method="post">
+        <input id="url" name="url"/>
+        <input type="submit"/>
+    </form>
+
+    @if (!string.IsNullOrWhiteSpace(id))
+    {
+        <div class="margin-top-10">
+            <p>Here is your shortnr link <a href="@id">@id</a></p>
+        </div>
+    }
+
+</div>
